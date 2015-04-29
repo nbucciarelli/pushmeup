@@ -71,7 +71,7 @@ module GCM
 
   def self.send_push_as_json(n, gcm_app)
     headers = {
-      'Authorization' => "key=#{ gcm_app[:key](n.identity) }",
+      'Authorization' => "key=#{ self.key(gcm_app, n.identity) }",
       'Content-Type' => 'application/json',
     }
     body = {
