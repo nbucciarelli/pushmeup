@@ -34,9 +34,9 @@ module APNS
     end
   end
   
-  def self.send_notification(device_token, message, name=nil)
+  def self.send_notification(device_token, message, application=nil)
     n = APNS::Notification.new(device_token, message)
-    self.send_notifications([n], name)
+    self.send_notifications([n], application)
   end
   
   def self.send_notifications(notifications, application=nil)
