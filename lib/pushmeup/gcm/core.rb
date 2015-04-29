@@ -81,7 +81,7 @@ module GCM
       :time_to_live => n.time_to_live,
       :delay_while_idle => n.delay_while_idle
     }
-    return self.send_to_server(headers, body.to_json)
+    return self.send_to_server(headers, body.to_json, gcm_app)
   end
 
   def self.send_push_as_plain_text(n, gcm_app)
