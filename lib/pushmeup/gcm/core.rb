@@ -5,12 +5,14 @@ require 'json'
 module GCM
   include HTTParty
 
+  @applications = []
+  
   @host = 'https://android.googleapis.com/gcm/send'
   @format = :json
   @key = nil
 
   class << self
-    attr_accessor :host, :format, :key
+    attr_accessor :host, :format, :key, :applications
 
     def key(identity = nil)
       if @key.is_a?(Hash)
